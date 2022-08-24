@@ -23,6 +23,16 @@
     width: fit-content;
     height: fit-content;
     margin: auto;
+    opacity: 1;
+}
+
+.clear{
+    transition: 2s ease;
+    opacity: 1;
+}
+
+.blur{
+    opacity: 0;
 }
 
 .Start-page path{

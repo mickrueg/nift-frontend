@@ -1,0 +1,30 @@
+.Start-page{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000560;
+    background-image: linear-gradient(#000560,#0009ae);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content: flex-start;
+}
+
+.Start-container{
+    margin: 20px;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.Start-body{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.Start-page path{
+    fill: blue;
+}

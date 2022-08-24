@@ -21,6 +21,7 @@ function App() {
           NiFT
         </div>
         <Routes>
+          <Route path="/*" element={<Start />} />
           <Route path="/start" element={<Start />} />
           <Route path="/login" element={<Login />} />
         </Routes>

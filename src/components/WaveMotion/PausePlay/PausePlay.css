@@ -1,0 +1,16 @@
+.pauseOrPlay{
+  position: fixed;
+  font-size: 25px;
+  bottom: 10px;
+  right: 10px;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.pauseOrPlay:hover{
+  opacity: .5;
+  cursor: pointer;
+}

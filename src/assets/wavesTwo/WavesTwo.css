@@ -1,0 +1,15 @@
+.WavesTwo{
+    position: fixed;
+    bottom: -523.5px;
+    left: -123px;
+    width: 1000px;
+    height: 1000px;
+    transition: 2000ms ease;
+    display: none;
+    
+}
+
+.WavesTwo path{
+    fill: #000560;
+    fill: green;
+}

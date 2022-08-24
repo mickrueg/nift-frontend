@@ -1,0 +1,21 @@
+svg{
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    z-index: -1;
+    bottom: -500px;
+    left: -200px;
+    animation: wave-glide 2s linear infinite;
+}
+
+.pause{
+    animation-play-state:paused;
+}
+
+@keyframes wave-glide{
+    from{
+    } to {
+        bottom: -523.5px;
+        left: -123px;
+    }
+}

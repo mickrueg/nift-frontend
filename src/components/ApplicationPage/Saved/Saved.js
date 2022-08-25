@@ -12,6 +12,10 @@ const Saved = () => {
     //Import Context
     const { 
         setNavbar,
+        setNavLearn,
+        setNavNews,
+        setNavExplore,
+        setNavSaved,
         createForm, setCreateForm,
         loginForm, setLoginForm,
         savedArticlesUpdated, setSavedArticlesUpdated
@@ -19,6 +23,10 @@ const Saved = () => {
 
     useEffect(()=>{
         setNavbar("Navbar-page")
+        setNavLearn('navbar-item not-selected')
+        setNavNews('navbar-item not-selected')
+        setNavExplore('navbar-item not-selected')
+        setNavSaved('navbar-item')
     })
 
     const [loadingArticles, setLoadingArticles] = useState(true);
@@ -94,7 +102,8 @@ const Saved = () => {
                 
                 </div>
                 <b className='logout' onClick={()=>{
-                    
+                    localStorage.clear()
+                    navigate('/*', {replace:true})
                 }}><u>Logout</u></b>
             </div>
         </div>

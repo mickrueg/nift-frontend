@@ -37,7 +37,7 @@ const Navbar = () => {
                <li className={navLearn}
                 onClick={()=>{
                     navigate('/learn', {replace:true})
-                    setNavLearn('navbar-item')
+                    setNavLearn('navbar-item not-selected')
                     setNavNews('navbar-item not-selected')
                     setNavExplore('navbar-item not-selected')
                     setNavSaved('navbar-item not-selected')

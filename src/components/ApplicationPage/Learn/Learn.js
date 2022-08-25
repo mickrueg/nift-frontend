@@ -11,6 +11,9 @@ const Learn = () => {
     const { 
         setNavbar,
         navLearn, setNavLearn,
+        setNavNews,
+        setNavExplore,
+        setNavSaved,
         createForm, setCreateForm,
         loginForm, setLoginForm
     } = useContext(AppContext)
@@ -18,6 +21,9 @@ const Learn = () => {
     useEffect(()=>{
         setNavbar("Navbar-page")
         setNavLearn('navbar-item')
+        setNavNews('navbar-item not-selected')
+        setNavExplore('navbar-item not-selected')
+        setNavSaved('navbar-item not-selected')
     })
 
     return (

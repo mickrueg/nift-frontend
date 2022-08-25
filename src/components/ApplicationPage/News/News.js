@@ -12,7 +12,10 @@ const News = () => {
     //Import Context
     const { 
         setNavbar,
+        setNavLearn,
         setNavNews,
+        setNavExplore,
+        setNavSaved,
         createForm, setCreateForm,
         loginForm, setLoginForm
     } = useContext(AppContext)
@@ -30,7 +33,10 @@ const News = () => {
     //On Page load
     useEffect(()=>{
         setNavbar("Navbar-page")
+        setNavLearn('navbar-item not-selected')
         setNavNews('navbar-item')
+        setNavExplore('navbar-item not-selected')
+        setNavSaved('navbar-item not-selected')
         //GET search articles from Hacker News
     }, [])
     

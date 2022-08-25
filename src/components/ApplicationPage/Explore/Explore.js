@@ -10,7 +10,10 @@ const Explore = () => {
     //Import Context
     const { 
         setNavbar,
+        setNavLearn,
+        setNavNews,
         setNavExplore,
+        setNavSaved,
         createForm, setCreateForm,
         loginForm, setLoginForm
     } = useContext(AppContext)
@@ -18,6 +21,9 @@ const Explore = () => {
     useEffect(()=>{
         setNavbar("Navbar-page")
         setNavExplore('navbar-item')
+        setNavLearn('navbar-item not-selected')
+        setNavNews('navbar-item not-selected')
+        setNavSaved('navbar-item not-selected')
     })
 
     return (

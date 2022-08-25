@@ -1,0 +1,28 @@
+.Learn-page{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.Learn-container{
+    margin: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Learn-container h2, hr{
+    width: 100%;
+    text-align: center;
+}
+
+.youtube-video{
+    width: 400px;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 grey;
+}
+
+.Learn-text{
+    padding: 20px;
+}

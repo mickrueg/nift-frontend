@@ -5,20 +5,64 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    align-content: flex-Login;
 }
 
 .Login-container{
     margin: 20px;
     width: 100%;
-    height: 60%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
 }
 
-.Login-body{
+.Login-form{
     width: fit-content;
     height: fit-content;
     margin: auto;
+    padding: 20px;
+    /* background-color: #00033e; */
+}
+
+.Login-form.hide{
+    display: none;
+}
+
+.Login-form.create{
+    
+}
+
+label{
+    line-height: 30px;
+}
+
+input{
+    color: white;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: solid 2px white;
+}
+
+button{
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    color: #000560;
+    margin: 0;
+    padding: 0 5px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 700;
+}
+
+button:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+
+.userDoesNotExist{
+    display: none;
+}
+.userExists{
+    display: block;
 }

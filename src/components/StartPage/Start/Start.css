@@ -2,8 +2,6 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #000560;
-    background-image: linear-gradient(#000560,#0009ae);
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -24,6 +22,11 @@
     height: fit-content;
     margin: auto;
     opacity: 1;
+    transition: 1s ease;
+}
+
+.Start-body h1{
+    text-shadow: 0 0 5px white;
 }
 
 .clear{
@@ -33,8 +36,5 @@
 
 .blur{
     opacity: 0;
-}
-
-.Start-page path{
-    fill: blue;
+    transition: 1s ease;
 }

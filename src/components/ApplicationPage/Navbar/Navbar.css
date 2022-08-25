@@ -1,0 +1,100 @@
+
+.Navbar-page{
+    position: fixed;
+    left: 0;
+    top: calc(100% - 65px);
+    opacity: 1;
+    transition: top 1s ease, opacity 1s ease;
+    z-index: 1;
+}
+
+.Navbar-page.hidden{
+    top: 100%;
+    opacity: 0;
+}
+
+.Navbar-container{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: white;
+    transition: background-color 2s ease;
+    color: #000560;
+    padding: 10px 0;
+    box-shadow: 0 0 10px 0 grey;
+}
+
+.navbar-item{
+    display: grid;
+    grid-row: auto auto;
+    justify-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    opacity: 1;
+    padding-bottom: 4px;
+    border-bottom: 5px solid #000560;
+}
+
+.navbar-item.not-selected{
+    opacity: .5;
+    border:none;
+}
+
+.navbar-item:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.navbar-icon{
+    width: 35px;
+    height: 35px;
+}
+
+
+@media screen and (min-width: 700px){
+    
+    .Navbar-page{
+        top: 14px;
+        left: 80px;
+        opacity: 1;
+        transition: top 1s ease, opacity 1s ease;
+    }
+
+    .Navbar-page.hidden{
+        top: -80px;
+        opacity: 0;
+    }
+    
+    .Navbar-container{
+        width: calc(100vw - 80px);
+        background-color: transparent;
+        box-shadow: none;
+        color: white;
+        transition: background-color .5s ease;
+    }
+    
+    .navbar-item{
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 5px solid white;
+    }
+
+    .navbar-item.not-selected{
+        opacity: .7;
+    }
+    
+    .navbar-item:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .navbar-icon{
+        display: none;
+    }
+    
+}

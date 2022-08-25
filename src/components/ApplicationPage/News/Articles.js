@@ -30,20 +30,12 @@ const removeArticleFromSaved = (user, article) =>{
 
 //Display articles
 function displayArticles(articles, addOrRemove){
-    const results = articles.hits.map((article, index)=>{
+    const results = articles.articles.map((article, index)=>{
 
-        const title = (article.story_title===null?article.title:article.story_title)
-        const url = (article.story_url===null?article.url:article.story_url)
-        let addClass;
-        let removeClass;
+        const title = article.title
+        const url = article.url
+        const date = article.publishedAt
 
-        if(addOrRemove==='add'){
-            addClass = 'News-article-add' 
-            removeClass = 'News-article-add hidden'
-        } else {
-            addClass = 'News-article-add hidden'
-            removeClass = 'News-article-add'
-        }
 
         if(title === null || url === null){
 
@@ -51,14 +43,10 @@ function displayArticles(articles, addOrRemove){
             return(
                 <div className='News-article' key={index}>
                     <a href={url} target="_blank" rel='noreferrer noopener' className='News-article-title'>{title}</a>
-                    <div className='News-article-date'>{extractDate(article.created_at)}</div>
-                    <div className={addClass}
+                    <div className='News-article-date'>{extractDate(date)}</div>
+                    <div className='News-article-add'
                     onClick={()=>{
-                        addArticleToSaved(localStorage.getItem('user'), url, article.created_at, title)
-                    }}>+<span className='News-my-folder'>&nbsp;my folder</span></div>
-                    <div className={removeClass}
-                    onClick={()=>{
-                        removeArticleFromSaved(localStorage.getItem('user'), url)
+                        addArticleToSaved(localStorage.getItem('user'), url, date, title)
                     }}>+<span className='News-my-folder'>&nbsp;my folder</span></div>
                 </div>
             )

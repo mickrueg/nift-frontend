@@ -61,7 +61,7 @@ const News = () => {
 
     useEffect((loadingLatest)=>{
         setLoadingLatest(true)
-        axios.get(`https://newsapi.org/v2/everything?q=non-fungible+token&from=2022-07-25&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS}`)
+        // axios.get(`https://newsapi.org/v2/everything?q=non-fungible+token&from=2022-07-25&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS}`)
             .then(res=>{
                 console.log(res.data)
                 setLoadingLatest(false)

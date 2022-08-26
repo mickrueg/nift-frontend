@@ -48,10 +48,11 @@ function App() {
         navSaved, setNavSaved,
         savedArticlesUpdated, setSavedArticlesUpdated
       }}>
-        <div className="logo-text" onClick={()=>{
-          navigate('/*', {replace:true})
-        }}>
-          NiFT
+        <div className="logo-text-container">
+          <span className="logo-text"
+          onClick={()=>{
+            navigate('/*', {replace:true})
+          }}>NiFT</span>
         </div>
         <Navbar />
         <Routes>

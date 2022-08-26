@@ -28,7 +28,7 @@ body {
   background-image: linear-gradient(#000340,#0009ae);
 }
 
-.logo-text{
+.logo-text-container{
   position: fixed;
   width: 100%;
   z-index: 1;

@@ -44,33 +44,33 @@ const News = () => {
     const [loadingPopular, setLoadingPopular] = useState(true);
     
 
-    //Call articles from Hacker News
-    // useEffect((loadingLatest)=>{
-    //     setLoadingLatest(true)
-    //     axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA}&q=non-fungible%20token`)
-    //         .then(res=>{
-    //             console.log("NEWSDATA")
-    //             console.log(res.data)
-    //             setLoadingLatest(false)
-    //             setLatestArticles(
-    //                 displayArticles(res.data, "add")
-    //             )
-    //         })
-    //         .catch(console.error)
-        
-    // },[])
-    useEffect((loadingPopular)=>{
-        // setLoadingPopular(true)
-        axios.get('https://hn.algolia.com/api/v1/search?query=non-fungible+token')
+    ///Call articles from Hacker News
+    useEffect((loadingLatest)=>{
+        setLoadingLatest(true)
+        axios.get('http://hn.algolia.com/api/v1/search_by_date?query=non-fungible+token')
             .then(res=>{
                 console.log(res.data)
-                // setLoadingPopular(false)
-                // setPopularArticles(
-                //     displayArticles(res.data)
-                // )
+                setLoadingLatest(false)
+                setLatestArticles(
+                    displayArticles(res.data)
+                )
             })
             .catch(console.error)
-
+        
+    },[])
+    
+    useEffect((loadingPopular)=>{
+        setLoadingPopular(true)
+        axios.get('http://hn.algolia.com/api/v1/search?query=non-fungible+token')
+            .then(res=>{
+                // console.log(res.data)
+                setLoadingPopular(false)
+                setPopularArticles(
+                    displayArticles(res.data)
+                )
+            })
+            .catch(console.error)
+        
     },[])
 
 
@@ -90,19 +90,19 @@ const News = () => {
                         setPopularArticlesClass('article-sort')
                     }}
                     >LATEST</h3></span>
-                    {/* <span><h3 className={popularSort} 
+                    <span><h3 className={popularSort} 
                     onClick={()=>{
                         setLatestSort('sort')
                         setPopularSort('sort selected')
                         setLatestArticlesClass('article-sort')
                         setPopularArticlesClass('article-sort selected')
-                    }}>POPULAR</h3></span> */}
+                    }}>POPULAR</h3></span>
                 </div>
                 <div className={latestArticlesClass}>
                     {(latestArticles?latestArticles:<div>Loading...</div>)}
                 </div>
                 <div className={popularArticlesClass}>
-                    {/* {(popularArticles?popularArticles:<div>Loading...</div>)} */}
+                    {(popularArticles?popularArticles:<div>Loading...</div>)}
                 </div>
                 <div className=''></div>
             </div>

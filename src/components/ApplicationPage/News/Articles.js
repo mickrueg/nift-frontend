@@ -22,12 +22,12 @@ const addArticleToSaved = (user, article, timestamp, title) =>{
 }
 
 //Display articles
-function displayArticles(articles, addOrRemove){
-    const results = articles.results.map((article, index)=>{
+function displayArticles(articles){
+    const results = articles.hits.map((article, index)=>{
 
-        const title = article.title
-        const url = article.link
-        const date = article.pubDate
+        const title = (article.story_title===null?article.title:article.story_title)
+        const url = (article.story_url===null?article.url:article.story_url)
+        const date = article.created_at
 
 
         if(title === null || url === null){

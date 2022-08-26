@@ -45,23 +45,9 @@ const News = () => {
     
 
     //Call articles from Hacker News
-    // useEffect((loadingLatest)=>{
-    //     setLoadingLatest(true)
-    //     axios.get('http://hn.algolia.com/api/v1/search_by_date?query=non-fungible+token')
-    //         .then(res=>{
-    //             console.log(res.data)
-    //             setLoadingLatest(false)
-    //             setLatestArticles(
-    //                 displayArticles(res.data, "add")
-    //             )
-    //         })
-    //         .catch(console.error)
-        
-    // },[])
-
     useEffect((loadingLatest)=>{
         setLoadingLatest(true)
-        axios.get(`https://newsapi.org/v2/everything?q=non-fungible+token&from=2022-07-25&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS}`)
+        axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA}&q=non-fungible%20token`)
             .then(res=>{
                 console.log(res.data)
                 setLoadingLatest(false)
@@ -72,6 +58,20 @@ const News = () => {
             .catch(console.error)
         
     },[])
+
+    // useEffect((loadingLatest)=>{
+    //     setLoadingLatest(true)
+    //     axios.get(`https://newsapi.org/v2/everything?q=non-fungible+token&from=2022-07-25&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS}`)
+    //         .then(res=>{
+    //             console.log(res.data)
+    //             setLoadingLatest(false)
+    //             setLatestArticles(
+    //                 displayArticles(res.data, "add")
+    //             )
+    //         })
+    //         .catch(console.error)
+        
+    // },[])
     
     useEffect((loadingPopular)=>{
         setLoadingPopular(true)
@@ -112,10 +112,10 @@ const News = () => {
                     }}>POPULAR</h3></span>
                 </div>
                 <div className={latestArticlesClass}>
-                    {(latestArticles?latestArticles:<div>Loading...</div>)}
+                    {/* {(latestArticles?latestArticles:<div>Loading...</div>)} */}
                 </div>
                 <div className={popularArticlesClass}>
-                    {(popularArticles?popularArticles:<div>Loading...</div>)}
+                    {/* {(popularArticles?popularArticles:<div>Loading...</div>)} */}
                 </div>
                 <div className=''></div>
             </div>

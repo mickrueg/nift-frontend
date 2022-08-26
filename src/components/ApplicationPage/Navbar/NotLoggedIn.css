@@ -1,0 +1,37 @@
+.Not-Logged-In-panel{
+    position: fixed;
+    top: calc(100% - 65px);
+    left: 0;
+    color: #000560;
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    height: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transition: top 1s ease, opacity 1s ease, background-color .5s ease;
+}
+
+.Not-Logged-In-panel.hidden{
+    display: none;
+}
+
+@media screen and (min-width: 700px){
+    
+    
+    .Not-Logged-In-panel{
+        top: 0;
+        left: 80px;
+        height: 55px;
+        opacity: 1;
+        transition: top 1s ease, opacity 1s ease, background-color .5s ease;
+        width: calc(100vw - 80px);
+        background-color: rgba(0, 3, 64, .6);
+        box-shadow: none;
+        color: white;
+
+    }
+
+}

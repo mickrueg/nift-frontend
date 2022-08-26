@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   
   //Form State
-  const [username, setUsername] = useState('')
   const [password, setPassword] = useState()
   const [confirmPassword, setConfirmPassword] = useState()
   const [existingUser, setExistingUser] = useState()
@@ -21,7 +20,8 @@ const Login = () => {
   const { 
       setNavbar,
       createForm, setCreateForm,
-      loginForm, setLoginForm
+      loginForm, setLoginForm,
+      username, setUsername
   } = useContext(AppContext)
   
   //Form Submission Functions
@@ -35,18 +35,20 @@ const Login = () => {
     } else {
       const submitUsername = e.target.username.value;
       const submitPassword = e.target.password.value;
-      localStorage.setItem('user', e.target.username.value)
+      localStorage.setItem('username', e.target.username.value)
       axios.post('https://nift-backend-two.herokuapp.com/user', {
         username: submitUsername,
         password: submitPassword
       })
       .then()
       .catch(console.error)
+      navigate('/learn', {replace:true})
     }
   }
   
   function loginToAccount(e){
     e.preventDefault()
+    setUsername(localStorage.getItem('username'))
     axios.post(`https://nift-backend-two.herokuapp.com/signin`, {
       username: e.target.username.value,
       password: e.target.password.value
@@ -112,7 +114,11 @@ const Login = () => {
           <input type='text' id='username' name='username'
           onChange={e=>setUsername(e.target.value)}
           ></input><br></br>
-          <i className={existingUserText}>username already in use</i><br></br>
+          <i className={existingUserText}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="user-exists-x" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+          </svg>
+            &nbsp;username already exists</i><br></br>
           <label htmlFor='password'>
             PASSWORD
           </label><br></br>

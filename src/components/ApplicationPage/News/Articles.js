@@ -40,7 +40,7 @@ function displayArticles(articles){
                     <div className='News-article-add'
                     onClick={()=>{
                         addArticleToSaved(localStorage.getItem('username'), url, date, title)
-                    }}>+<span className='News-my-folder'>&nbsp;my folder</span></div>
+                    }}><span className="my-folder-symbol">+</span><span className='News-my-folder'>&nbsp;my folder</span></div>
                 </div>
             )
         }

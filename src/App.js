@@ -22,6 +22,7 @@ function App() {
   const [navbar, setNavbar] = useState('Navbar-page hidden')
   const [createForm, setCreateForm] = useState('Login-form hide')
   const [loginForm, setLoginForm] = useState('Login-form')
+  const [username, setUsername] = useState('')
   
   //Navbar selection
   const [navLearn, setNavLearn] = useState('navbar-item not-selected')
@@ -46,7 +47,8 @@ function App() {
         navNews, setNavNews,
         navExplore, setNavExplore,
         navSaved, setNavSaved,
-        savedArticlesUpdated, setSavedArticlesUpdated
+        savedArticlesUpdated, setSavedArticlesUpdated,
+        username, setUsername
       }}>
         <div className="logo-text-container">
           <span className="logo-text"

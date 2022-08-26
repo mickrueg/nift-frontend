@@ -59,7 +59,7 @@
 @media screen and (min-width: 700px){
     
     .Navbar-page{
-        top: 14px;
+        top: 10px;
         left: 80px;
         opacity: 1;
         transition: top 1s ease, opacity 1s ease;

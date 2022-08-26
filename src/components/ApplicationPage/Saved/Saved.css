@@ -26,3 +26,9 @@
     width: 100%;
     text-align: left;
 }
+
+.remove-saved-x{
+    height: 32px;
+    width: 32px;
+    margin-left: -1px;
+}

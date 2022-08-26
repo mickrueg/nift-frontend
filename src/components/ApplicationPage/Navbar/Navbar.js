@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../../App';
 import './Navbar.css';
+import NotLoggedIn from './NotLoggedIn';
 
 const Navbar = () => {
 
@@ -73,6 +74,7 @@ const Navbar = () => {
                 }}
                >{folderIcon}My Folders</li> 
             </ul>
+            <NotLoggedIn />
         </div>
     );
 };

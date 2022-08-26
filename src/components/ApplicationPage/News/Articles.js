@@ -21,20 +21,13 @@ const addArticleToSaved = (user, article, timestamp, title) =>{
       .catch(console.error)
 }
 
-const removeArticleFromSaved = (user, article) =>{
-    axios.delete(`https://nift-backend-two.herokuapp.com/${article}`)
-      .then()
-      .catch(console.error)
-}
-
-
 //Display articles
 function displayArticles(articles, addOrRemove){
-    const results = articles.articles.map((article, index)=>{
+    const results = articles.results.map((article, index)=>{
 
         const title = article.title
-        const url = article.url
-        const date = article.publishedAt
+        const url = article.link
+        const date = article.pubDate
 
 
         if(title === null || url === null){
@@ -46,7 +39,7 @@ function displayArticles(articles, addOrRemove){
                     <div className='News-article-date'>{extractDate(date)}</div>
                     <div className='News-article-add'
                     onClick={()=>{
-                        addArticleToSaved(localStorage.getItem('user'), url, date, title)
+                        addArticleToSaved(localStorage.getItem('username'), url, date, title)
                     }}>+<span className='News-my-folder'>&nbsp;my folder</span></div>
                 </div>
             )

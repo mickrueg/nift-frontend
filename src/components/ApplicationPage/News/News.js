@@ -59,48 +59,6 @@ const News = () => {
             .catch(console.error)
         
     },[])
-    useEffect((loadingLatest)=>{
-        setLoadingLatest(true)
-        axios.get(`http://api.mediastack.com/v1/news?access_key=${process.env.REACT_APP_MEDIASTACK}&keywords=NFT`)
-            .then(res=>{
-                console.log('MEDIASTACK')
-                console.log(res.data)
-                setLoadingLatest(false)
-                setLatestArticles(
-                    displayArticles(res.data, "add")
-                )
-            })
-            .catch(console.error)
-        
-    },[])
-
-    // useEffect((loadingLatest)=>{
-    //     setLoadingLatest(true)
-    //     axios.get(`https://newsapi.org/v2/everything?q=non-fungible+token&from=2022-07-25&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS}`)
-    //         .then(res=>{
-    //             console.log(res.data)
-    //             setLoadingLatest(false)
-    //             setLatestArticles(
-    //                 displayArticles(res.data, "add")
-    //             )
-    //         })
-    //         .catch(console.error)
-        
-    // },[])
-    
-    useEffect((loadingPopular)=>{
-        setLoadingPopular(true)
-        axios.get('http://hn.algolia.com/api/v1/search?query=non-fungible+token')
-            .then(res=>{
-                // console.log(res.data)
-                setLoadingPopular(false)
-                setPopularArticles(
-                    displayArticles(res.data)
-                )
-            })
-            .catch(console.error)
-        
-    },[])
 
 
 
@@ -118,16 +76,17 @@ const News = () => {
                         setLatestArticlesClass('article-sort selected')
                         setPopularArticlesClass('article-sort')
                     }}
-                    >LATEST</h3></span><span><h3 className={popularSort} 
+                    >LATEST</h3></span>
+                    {/* <span><h3 className={popularSort} 
                     onClick={()=>{
                         setLatestSort('sort')
                         setPopularSort('sort selected')
                         setLatestArticlesClass('article-sort')
                         setPopularArticlesClass('article-sort selected')
-                    }}>POPULAR</h3></span>
+                    }}>POPULAR</h3></span> */}
                 </div>
                 <div className={latestArticlesClass}>
-                    {/* {(latestArticles?latestArticles:<div>Loading...</div>)} */}
+                    {(latestArticles?latestArticles:<div>Loading...</div>)}
                 </div>
                 <div className={popularArticlesClass}>
                     {/* {(popularArticles?popularArticles:<div>Loading...</div>)} */}

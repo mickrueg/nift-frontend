@@ -49,6 +49,21 @@ const News = () => {
         setLoadingLatest(true)
         axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA}&q=non-fungible%20token`)
             .then(res=>{
+                console.log("NEWSDATA")
+                console.log(res.data)
+                setLoadingLatest(false)
+                setLatestArticles(
+                    displayArticles(res.data, "add")
+                )
+            })
+            .catch(console.error)
+        
+    },[])
+    useEffect((loadingLatest)=>{
+        setLoadingLatest(true)
+        axios.get(`http://api.mediastack.com/v1/news?access_key=${process.env.REACT_APP_MEDIASTACK}&keywords=NFT`)
+            .then(res=>{
+                console.log('MEDIASTACK')
                 console.log(res.data)
                 setLoadingLatest(false)
                 setLatestArticles(

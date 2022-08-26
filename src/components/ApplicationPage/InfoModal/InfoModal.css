@@ -3,16 +3,18 @@
     top: 0;
     left: 10%;
     opacity: 1;
-    z-index: 2;
+    z-index: 0;
     height: 100%;
     width: 90%;
     color: #000560;
     background-color: white;
     overflow-y: scroll;
     transition: left 500ms ease;
+    box-shadow: 0 0 10px 0 grey;
 }
 
 .Info-modal-page.hidden{
+    box-shadow: none;
     left: 100%;
     transition: left 500ms ease;
 }

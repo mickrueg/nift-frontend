@@ -32,6 +32,7 @@ const Saved = () => {
 
     const [loadingArticles, setLoadingArticles] = useState(true);
     const [articles, setArticles]= useState()
+    const [nfts, setNFTs]= useState()
     
 
     //Call articles from Hacker News
@@ -48,6 +49,18 @@ const Saved = () => {
             .catch(console.error)
         
     },[savedArticlesUpdated])
+
+    useEffect(()=>{
+        axios.get(`https://nift-backend-two.herokuapp.com/nfts/${localStorage.getItem('username')}`)
+            .then(res=>{
+                console.log(res.data)
+                setNFTs(
+                    displayNFTs(res.data)
+                )
+            })
+            .catch(console.error)
+        
+    },[])
 
     //Functions
     function extractDate(timestamp){
@@ -67,7 +80,6 @@ const Saved = () => {
 
     const displaySavedArticles = (articles) => {
         
-
         const results = articles.map((article, index)=>{
             const url = article.url
             const timestamp = article.timestamp
@@ -96,15 +108,46 @@ const Saved = () => {
         return results
     }
 
+  function displayNFTs(data){
+        const results = data.map((nft, index)=>{
+            const nftImageURL = nft.image
+            const nftName = nft.name
+            const nftDescription = nft.description
+            const checkMp4 = nftImageURL.slice(-3)
+            
+            if(nftImageURL===null || checkMp4==='mp4' || !nftImageURL || nftImageURL==='' || checkMp4==='tml'){
+                
+            } else {
+                return(
+                    <div className='Explore-NFT-box' key={index} onClick={()=>{
+                        // setExplorePagePush('Explore-page pushed')
+                        // setInfoModal('Info-modal-page')
+                        // setNFTname(nftName)
+                        // setNFTimage(nftImageURL)
+                        // setNFTdescription(nftDescription)
+                    }}>
+                        <img className='Explore-NFT-box-image' src={nftImageURL} alt={nftDescription}/>
+                    </div>
+                )
+            }
+        }
+        )
+        return results
+    }
+
     return (
         <div className='Saved-page'>
             <div className='Saved-container'>
                 <h2>MY <b>FOLDERS</b></h2>
                 <hr></hr>
-                <h3>SAVED NEWS <b>ARTICLES</b></h3>
+                <h3 className='Saved-title'>SAVED NEWS <b>ARTICLES</b></h3>
                 <div>
                     {articles}
-                
+                </div>
+                <hr></hr>
+                <h3 className='Saved-title'>SAVED <b>NFTs</b></h3>
+                <div>
+                    {nfts}
                 </div>
                 <b className='logout' onClick={()=>{
                     setUsername()

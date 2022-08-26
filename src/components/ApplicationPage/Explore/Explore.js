@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import './Explore.css';
 import { AppContext } from '../../../App';
 import axios from 'axios';
-import InfoModal from './InfoModal';
 
 
 const Explore = () => {
@@ -11,9 +10,6 @@ const Explore = () => {
     //setState
     const [searchNFT, setSearchNFT] = useState('fruit')
     const [displayResults, setDisplayResults] = useState()
-    const [NFTname, setNFTname] = useState()
-    const [NFTdescription, setNFTdescription] = useState()
-    const [NFTimage, setNFTimage] = useState()
 
     const navigate = useNavigate()
     //Import Context
@@ -26,7 +22,10 @@ const Explore = () => {
         createForm, setCreateForm,
         loginForm, setLoginForm,
         explorePagePush, setExplorePagePush,
-        infoModal, setInfoModal
+        infoModal, setInfoModal,
+        NFTname, setNFTname,
+        NFTdescription, setNFTdescription,
+        NFTimage, setNFTimage
     } = useContext(AppContext)
 
 
@@ -112,7 +111,6 @@ const Explore = () => {
                     {(displayResults?displayResults:<div className='Explore-loading'>Loading...</div>)}
                 </div>
             </div>
-            <InfoModal name={NFTname} description={NFTdescription} image={NFTimage}/>
         </div>
     );
 };

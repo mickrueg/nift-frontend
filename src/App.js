@@ -11,6 +11,7 @@ import Learn from "./components/ApplicationPage/Learn/Learn";
 import Explore from "./components/ApplicationPage/Explore/Explore";
 import News from "./components/ApplicationPage/News/News";
 import Saved from "./components/ApplicationPage/Saved/Saved";
+import InfoModal from "./components/ApplicationPage/InfoModal/InfoModal";
 
 
 
@@ -25,6 +26,11 @@ function App() {
   const [username, setUsername] = useState('')
   const [explorePagePush, setExplorePagePush] = useState('Explore-page')
   const [infoModal, setInfoModal] = useState('Info-modal-page hidden')
+
+  //Info Modal state
+  const [NFTname, setNFTname] = useState()
+  const [NFTdescription, setNFTdescription] = useState()
+  const [NFTimage, setNFTimage] = useState()
   
   //Navbar selection
   const [navLearn, setNavLearn] = useState('navbar-item not-selected')
@@ -52,7 +58,10 @@ function App() {
         savedArticlesUpdated, setSavedArticlesUpdated,
         username, setUsername,
         explorePagePush, setExplorePagePush,
-        infoModal, setInfoModal
+        infoModal, setInfoModal,
+        NFTname, setNFTname,
+        NFTdescription, setNFTdescription,
+        NFTimage, setNFTimage
       }}>
         <div className="logo-text-container">
           <span className="logo-text"
@@ -67,7 +76,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/news" element={<News />} />
-          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore" element={<>
+            <Explore />
+            <InfoModal />
+          </>
+          } />
           <Route path="/saved" element={<Saved />} />
         </Routes>
       </AppContext.Provider>

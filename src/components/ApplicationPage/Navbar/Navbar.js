@@ -26,7 +26,9 @@ const Navbar = () => {
         navLearn, setNavLearn,
         navNews, setNavNews,
         navExplore, setNavExplore,
-        navSaved, setNavSaved
+        navSaved, setNavSaved,
+        setInfoModal,
+        setExplorePagePush
     } = useContext(AppContext)
 
     const navigate = useNavigate()
@@ -60,7 +62,8 @@ const Navbar = () => {
                     setNavNews('navbar-item not-selected')
                     setNavExplore('navbar-item')
                     setNavSaved('navbar-item not-selected')
-                    
+                    setExplorePagePush('Explore-page')
+                    setInfoModal('Info-modal-page hidden')
                 }}
                 >{exploreIcon}Explore</li> 
                <li className={navSaved}

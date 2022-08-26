@@ -47,7 +47,7 @@ const News = () => {
     ///Call articles from Hacker News
     useEffect((loadingLatest)=>{
         setLoadingLatest(true)
-        axios.get('http://hn.algolia.com/api/v1/search_by_date?query=non-fungible+token')
+        axios.get('https://hn.algolia.com/api/v1/search_by_date?query=non-fungible+token')
             .then(res=>{
                 console.log(res.data)
                 setLoadingLatest(false)
@@ -61,7 +61,7 @@ const News = () => {
     
     useEffect((loadingPopular)=>{
         setLoadingPopular(true)
-        axios.get('http://hn.algolia.com/api/v1/search?query=non-fungible+token')
+        axios.get('https://hn.algolia.com/api/v1/search?query=non-fungible+token')
             .then(res=>{
                 // console.log(res.data)
                 setLoadingPopular(false)

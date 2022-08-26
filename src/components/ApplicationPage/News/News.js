@@ -45,19 +45,32 @@ const News = () => {
     
 
     //Call articles from Hacker News
-    useEffect((loadingLatest)=>{
-        setLoadingLatest(true)
-        axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA}&q=non-fungible%20token`)
+    // useEffect((loadingLatest)=>{
+    //     setLoadingLatest(true)
+    //     axios.get(`https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWSDATA}&q=non-fungible%20token`)
+    //         .then(res=>{
+    //             console.log("NEWSDATA")
+    //             console.log(res.data)
+    //             setLoadingLatest(false)
+    //             setLatestArticles(
+    //                 displayArticles(res.data, "add")
+    //             )
+    //         })
+    //         .catch(console.error)
+        
+    // },[])
+    useEffect((loadingPopular)=>{
+        // setLoadingPopular(true)
+        axios.get('https://hn.algolia.com/api/v1/search?query=non-fungible+token')
             .then(res=>{
-                console.log("NEWSDATA")
                 console.log(res.data)
-                setLoadingLatest(false)
-                setLatestArticles(
-                    displayArticles(res.data, "add")
-                )
+                // setLoadingPopular(false)
+                // setPopularArticles(
+                //     displayArticles(res.data)
+                // )
             })
             .catch(console.error)
-        
+
     },[])
 
 

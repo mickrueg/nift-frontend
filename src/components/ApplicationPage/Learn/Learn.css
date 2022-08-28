@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
 }
 
 .Learn-container{
@@ -14,6 +15,10 @@
 .Learn-container h2, hr{
     width: 100%;
     text-align: center;
+}
+
+.Learn-container hr{
+    margin-bottom: 20px;
 }
 
 .youtube-video{

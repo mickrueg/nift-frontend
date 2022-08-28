@@ -24,7 +24,8 @@ function App() {
   const [createForm, setCreateForm] = useState('Login-form hide')
   const [loginForm, setLoginForm] = useState('Login-form')
   const [username, setUsername] = useState('')
-  const [explorePagePush, setExplorePagePush] = useState('Explore-page')
+  const [explorePage, setExplorePage] = useState('Explore-page')
+  const [savedPage, setSavedPage] = useState('Saved-page')
   const [infoModal, setInfoModal] = useState('Info-modal-page hidden')
 
   //Info Modal state
@@ -57,7 +58,8 @@ function App() {
         navSaved, setNavSaved,
         savedArticlesUpdated, setSavedArticlesUpdated,
         username, setUsername,
-        explorePagePush, setExplorePagePush,
+        explorePage, setExplorePage,
+        savedPage, setSavedPage,
         infoModal, setInfoModal,
         NFTname, setNFTname,
         NFTdescription, setNFTdescription,
@@ -76,12 +78,18 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/news" element={<News />} />
-          <Route path="/explore" element={<>
-            <Explore />
-            <InfoModal />
-          </>
-          } />
-          <Route path="/saved" element={<Saved />} />
+          <Route path="/explore" element={
+              <>
+                <Explore />
+                <InfoModal type='add'/>
+              </>
+            } />
+          <Route path="/saved" element={
+              <>
+                <Saved />
+                <InfoModal type='remove'/>
+              </>
+            } />
         </Routes>
       </AppContext.Provider>
     </div>

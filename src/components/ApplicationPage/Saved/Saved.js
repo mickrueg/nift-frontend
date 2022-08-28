@@ -19,7 +19,12 @@ const Saved = () => {
         createForm, setCreateForm,
         loginForm, setLoginForm,
         savedArticlesUpdated, setSavedArticlesUpdated,
-        username, setUsername
+        username, setUsername,
+        infoModal, setInfoModal,
+        setNFTname,
+        setNFTimage,
+        setNFTdescription,
+        savedPage, setSavedPage
     } = useContext(AppContext)
 
     useEffect(()=>{
@@ -31,8 +36,8 @@ const Saved = () => {
     })
 
     const [loadingArticles, setLoadingArticles] = useState(true);
-    const [articles, setArticles]= useState()
-    const [nfts, setNFTs]= useState()
+    const [articles, setArticles]= useState([])
+    const [nfts, setNFTs]= useState([])
     
 
     //Call articles from Hacker News
@@ -92,7 +97,7 @@ const Saved = () => {
                     <div className='News-article-date'>{(timestamp)}</div>
                     <div className="News-article-add remove"
                     onClick={()=>{
-                        removeArticleFromSaved(localStorage.getItem('user'), articleId)
+                        removeArticleFromSaved(localStorage.getItem('username'), articleId)
                         setTimeout(() => {
                             setSavedArticlesUpdated(prev=>prev+1)
                         }, 100);
@@ -120,11 +125,11 @@ const Saved = () => {
             } else {
                 return(
                     <div className='Explore-NFT-box' key={index} onClick={()=>{
-                        // setExplorePagePush('Explore-page pushed')
-                        // setInfoModal('Info-modal-page')
-                        // setNFTname(nftName)
-                        // setNFTimage(nftImageURL)
-                        // setNFTdescription(nftDescription)
+                        setSavedPage('Saved-page pushed')
+                        setInfoModal('Info-modal-page')
+                        setNFTname(nftName)
+                        setNFTimage(nftImageURL)
+                        setNFTdescription(nftDescription)
                     }}>
                         <img className='Explore-NFT-box-image' src={nftImageURL} alt={nftDescription}/>
                     </div>
@@ -136,20 +141,20 @@ const Saved = () => {
     }
 
     return (
-        <div className='Saved-page'>
+        <div className={savedPage}>
             <div className='Saved-container'>
                 <h2>MY <b>FOLDERS</b></h2>
                 <hr></hr>
                 <h3 className='Saved-title'>SAVED NEWS <b>ARTICLES</b></h3>
-                <div>
-                    {articles}
+                <div className='Saved-articles-container'>
+                    {articles.length>0? articles : <div className='Saved-none-text'>You can save News Articles here by adding them to your folder in the "News" tab.</div>}
                 </div>
                 <hr></hr>
                 <h3 className='Saved-title'>SAVED <b>NFTs</b></h3>
-                <div>
-                    {nfts}
+                <div className='Saved-NFTs-container'>
+                    {nfts.length>0 ? nfts : <div className='Saved-none-text'>You can save NFTs here by adding them to your folder in the Explore tab.</div>}
                 </div>
-                <b className='logout' onClick={()=>{
+                <b className='logout react-link' onClick={()=>{
                     setUsername()
                     localStorage.clear()
                     navigate('/*', {replace:true})

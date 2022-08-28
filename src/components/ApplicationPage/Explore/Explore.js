@@ -21,7 +21,7 @@ const Explore = () => {
         setNavSaved,
         createForm, setCreateForm,
         loginForm, setLoginForm,
-        explorePagePush, setExplorePagePush,
+        explorePage, setExplorePage,
         infoModal, setInfoModal,
         NFTname, setNFTname,
         NFTdescription, setNFTdescription,
@@ -53,7 +53,7 @@ const Explore = () => {
             } else {
                 return(
                     <div className='Explore-NFT-box' key={index} onClick={()=>{
-                        setExplorePagePush('Explore-page pushed')
+                        setExplorePage('Explore-page pushed')
                         setInfoModal('Info-modal-page')
                         setNFTname(nftName)
                         setNFTimage(nftImageURL)
@@ -94,7 +94,7 @@ const Explore = () => {
     }
 
     return (
-        <div className={explorePagePush}>
+        <div className={explorePage}>
             <div className='Explore-container'>
                 <div className='Explore-form-container'>
                     <div className='Explore-title'>

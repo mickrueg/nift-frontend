@@ -24,6 +24,10 @@
     text-align: center;
 }
 
+.Explore-container hr{
+    margin-bottom: 20px;
+}
+
 .Explore-title{
     width: 100%;
 }
@@ -88,7 +92,6 @@
     /* border: solid white 5px; */
     height: 100px;
     width: 100px;
-    margin: 8px;
 }
 
 .Explore-NFT-box-image{

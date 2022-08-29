@@ -9,12 +9,10 @@ const Learn = () => {
     //Import Context
     const { 
         setNavbar,
-        navLearn, setNavLearn,
+        setNavLearn,
         setNavNews,
         setNavExplore,
         setNavSaved,
-        createForm, setCreateForm,
-        loginForm, setLoginForm
     } = useContext(AppContext)
 
     //Create State
@@ -30,7 +28,6 @@ const Learn = () => {
         setNavNews('navbar-item not-selected')
         setNavExplore('navbar-item not-selected')
         setNavSaved('navbar-item not-selected')
-        console.log('effect')
     },[])
 
     return (
@@ -40,8 +37,8 @@ const Learn = () => {
                 <hr></hr>
                 <iframe className="youtube-video" src="https://www.youtube.com/embed/NNQLJcJEzv0" title="NFT Explained In 5 Minutes | What Is NFT? - Non Fungible Token | NFT Crypto Explained | Simplilearn" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 <div className='Learn-text'>
-                <b>WHAT IS AN NFT?</b><br></br>
-                An NFT ("Non-fungible token") is simply a digital record representing ownership over a tangible or intangible item. These tokens are commonly used for art, music, memes, pictures, or virtual goods.
+                    <b>WHAT IS AN NFT?</b><br></br>
+                    An NFT ("Non-fungible token") is simply a digital record representing ownership over a tangible or intangible item. These tokens are commonly used for art, music, memes, pictures, or virtual goods.
                 </div>
             </div>
         </div>

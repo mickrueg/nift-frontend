@@ -10,8 +10,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   
   //Form State
-  const [password, setPassword] = useState()
-  const [confirmPassword, setConfirmPassword] = useState()
   const [existingUser, setExistingUser] = useState()
   const [existingUserText, setExistingUserText] = useState('userDoesNotExist')
   
@@ -58,7 +56,7 @@ const Login = () => {
           localStorage.setItem('username', e.target.username.value)
           navigate('/learn', {replace:true})
         } else{
-          console.log(res.data)
+          alert(res.data)
         }
       })
       .catch(console.error)
@@ -119,10 +117,10 @@ const Login = () => {
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
           </svg>
             &nbsp;username already exists</i><br></br>
-          <label htmlFor='password'>
+          <label htmlFor='createPassword'>
             PASSWORD
           </label><br></br>
-          <input type='password' id='password' name='password'
+          <input type='password' id='createPassword' name='createPassword'
           ></input><br></br>
           <br></br>
           <label htmlFor='confirmPassword'>

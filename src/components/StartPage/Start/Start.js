@@ -70,7 +70,6 @@ const Start = () => {
                 <h4>Login to your <b
                     className='react-link'
                     onClick={()=>{
-                      console.log(localStorage.getItem('username'))
                       if(localStorage.getItem('username')===null){
                         exitPage("/login");
                         setCreateForm('Login-form hide');

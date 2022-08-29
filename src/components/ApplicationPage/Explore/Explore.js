@@ -19,13 +19,11 @@ const Explore = () => {
         setNavNews,
         setNavExplore,
         setNavSaved,
-        createForm, setCreateForm,
-        loginForm, setLoginForm,
         explorePage, setExplorePage,
-        infoModal, setInfoModal,
-        NFTname, setNFTname,
-        NFTdescription, setNFTdescription,
-        NFTimage, setNFTimage
+        setInfoModal,
+        setNFTname,
+        setNFTdescription,
+        setNFTimage
     } = useContext(AppContext)
 
     //On Page Load

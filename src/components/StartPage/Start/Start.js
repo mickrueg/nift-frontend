@@ -58,7 +58,7 @@ const Start = () => {
                   <b
                     className='react-link'
                     onClick={()=>{
-                      exitPage("/login");
+                      exitPage("/learn");
                       setCreateForm('Login-form');
                       setLoginForm('Login-form hide');
                     }}><u>Start here</u></b></h4>

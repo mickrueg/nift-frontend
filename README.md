@@ -1,3 +1,40 @@
+# Welcome to NiFT
+
+A web application that allows users to learn about NFTs, read related news articles, and explore the actual NFT marketplace. Users can save articles and NFTs to their account for future reference.
+
+## Installation
+#
+The live web application can be accessed at [NiFT Web Application](https://nift-app.netlify.app/). Other links:
+
+> Github
+> - [Front End Code](https://github.com/mickrueg/nift-frontend)
+> - [Back end Code](https://github.com/mickrueg/nift-backend)
+> 
+> Live
+> - [Front End](https://nift-app.netlify.app/)
+> - [Back End](https://nift-backend-two.herokuapp.com/)
+
+## Front End Technologies
+#
+### Code Base
+NiFT was built with React JS and CSS. 
+### Animations
+The app uses a variety of important CSS animations to create an interactive and enjoyable user experience. Some key animations include:
+
+- Start Page Digital Wave
+    - Created using svg file and key frames
+    - The key frames move the svg file to the right and down by one unit
+    - The svg file is assigned the animation on an infinite loop
+    - The end result is that the wave appears to be on a continuous flow
+- NFT Info Modal push 
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

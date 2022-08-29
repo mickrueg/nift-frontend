@@ -23,6 +23,7 @@ const News = () => {
     //SetState
     const [latestArticles, setLatestArticles] = useState()
     const [popularArticles, setPopularArticles] = useState()
+    const [newsPage, setNewsPage] = useState('News-page hidden')
     
     //HTML state
     const [latestSort, setLatestSort] = useState('sort selected')
@@ -32,6 +33,10 @@ const News = () => {
     
     //On Page load
     useEffect(()=>{
+        setNewsPage('News-page hidden')
+        setTimeout(() => {
+            setNewsPage('News-page')
+        }, 100);
         setNavbar("Navbar-page")
         setNavLearn('navbar-item not-selected')
         setNavNews('navbar-item')
@@ -77,7 +82,7 @@ const News = () => {
 
 
     return (
-        <div className='News-page'>
+        <div className={newsPage}>
             <div className='News-container'>
                 <h2>NFTS IN THE <b>NEWS</b></h2>
                 <hr></hr>

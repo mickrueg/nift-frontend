@@ -8,13 +8,6 @@ const NotLoggedIn = () => {
     const [NLIpanel, setNLIpanel] = useState('Not-Logged-In-panel')
 
     const navigate = useNavigate()
-    //Import Context
-    const { 
-        setNavbar,
-        createForm, setCreateForm,
-        loginForm, setLoginForm,
-        username, setUsername
-    } = useContext(AppContext)
 
     // const {  }
 
@@ -24,7 +17,6 @@ const NotLoggedIn = () => {
         } else {
             setNLIpanel('Not-Logged-In-panel hidden')
         }
-        console.log('checking')
     })
 
     return (

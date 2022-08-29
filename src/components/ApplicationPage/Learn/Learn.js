@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Learn.css';
 import { AppContext } from '../../../App';
@@ -6,7 +6,6 @@ import { AppContext } from '../../../App';
 
 const Learn = () => {
 
-    const navigate = useNavigate()
     //Import Context
     const { 
         setNavbar,
@@ -18,16 +17,24 @@ const Learn = () => {
         loginForm, setLoginForm
     } = useContext(AppContext)
 
+    //Create State
+    const [learnPage, setLearnPage] = useState('Learn-page hidden')
+
     useEffect(()=>{
+        setLearnPage('Learn-page hidden')
+        setTimeout(() => {
+            setLearnPage('Learn-page')
+        }, 100);
         setNavbar("Navbar-page")
         setNavLearn('navbar-item')
         setNavNews('navbar-item not-selected')
         setNavExplore('navbar-item not-selected')
         setNavSaved('navbar-item not-selected')
-    })
+        console.log('effect')
+    },[])
 
     return (
-        <div className='Learn-page'>
+        <div className={learnPage}>
             <div className='Learn-container'>
                 <h2>LEARN</h2>
                 <hr></hr>

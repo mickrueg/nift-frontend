@@ -6,6 +6,7 @@
     flex-wrap: wrap;
     justify-content: left;
     align-content: flex-start;
+    z-index: 3;
 }
 
 .Start-container{

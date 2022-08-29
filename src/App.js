@@ -32,6 +32,7 @@ function App() {
   const [NFTname, setNFTname] = useState()
   const [NFTdescription, setNFTdescription] = useState()
   const [NFTimage, setNFTimage] = useState()
+  const [NFTid, setNFTid] = useState()
   
   //Navbar selection
   const [navLearn, setNavLearn] = useState('navbar-item not-selected')
@@ -41,6 +42,7 @@ function App() {
 
   //Updates
   const [savedArticlesUpdated, setSavedArticlesUpdated] = useState(0)
+  const [savedNFTsUpdated, setSavedNFTsUpdated] = useState(0)
 
 
   const navigate = useNavigate();
@@ -57,13 +59,15 @@ function App() {
         navExplore, setNavExplore,
         navSaved, setNavSaved,
         savedArticlesUpdated, setSavedArticlesUpdated,
+        savedNFTsUpdated, setSavedNFTsUpdated,
         username, setUsername,
         explorePage, setExplorePage,
         savedPage, setSavedPage,
         infoModal, setInfoModal,
         NFTname, setNFTname,
         NFTdescription, setNFTdescription,
-        NFTimage, setNFTimage
+        NFTimage, setNFTimage,
+        NFTid, setNFTid
       }}>
         <div className="logo-text-container">
           <span className="logo-text"

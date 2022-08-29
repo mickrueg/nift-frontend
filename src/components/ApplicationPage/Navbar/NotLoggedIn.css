@@ -16,6 +16,7 @@
 
 .Not-Logged-In-panel.hidden{
     display: none;
+
 }
 
 @media screen and (min-width: 700px){

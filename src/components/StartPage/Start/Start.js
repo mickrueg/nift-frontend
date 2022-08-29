@@ -67,7 +67,7 @@ const Start = () => {
               <br></br>
               <br></br>
               <div className={startBodyBottom}>
-                <h4>Login to your                   <b
+                <h4>Login to your <b
                     className='react-link'
                     onClick={()=>{
                       console.log(localStorage.getItem('username'))

@@ -24,7 +24,9 @@ const Saved = () => {
         setNFTname,
         setNFTimage,
         setNFTdescription,
-        savedPage, setSavedPage
+        savedPage, setSavedPage,
+        NFTid, setNFTid,
+        savedNFTsUpdated
     } = useContext(AppContext)
 
     useEffect(()=>{
@@ -45,7 +47,6 @@ const Saved = () => {
         setLoadingArticles(true)
         axios.get(`https://nift-backend-two.herokuapp.com/articles/${localStorage.getItem('username')}`)
             .then(res=>{
-                console.log(res.data)
                 setLoadingArticles(false)
                 setArticles(
                     displaySavedArticles(res.data)
@@ -58,14 +59,13 @@ const Saved = () => {
     useEffect(()=>{
         axios.get(`https://nift-backend-two.herokuapp.com/nfts/${localStorage.getItem('username')}`)
             .then(res=>{
-                console.log(res.data)
                 setNFTs(
                     displayNFTs(res.data)
                 )
             })
             .catch(console.error)
         
-    },[])
+    },[savedNFTsUpdated])
 
     //Functions
     function extractDate(timestamp){
@@ -118,6 +118,7 @@ const Saved = () => {
             const nftImageURL = nft.image
             const nftName = nft.name
             const nftDescription = nft.description
+            const nftID = nft._id
             const checkMp4 = nftImageURL.slice(-3)
             
             if(nftImageURL===null || checkMp4==='mp4' || !nftImageURL || nftImageURL==='' || checkMp4==='tml'){
@@ -130,6 +131,7 @@ const Saved = () => {
                         setNFTname(nftName)
                         setNFTimage(nftImageURL)
                         setNFTdescription(nftDescription)
+                        setNFTid(nftID)
                     }}>
                         <img className='Explore-NFT-box-image' src={nftImageURL} alt={nftDescription}/>
                     </div>

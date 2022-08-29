@@ -10,7 +10,7 @@ const Explore = () => {
     //setState
     const [searchNFT, setSearchNFT] = useState('fruit')
     const [displayResults, setDisplayResults] = useState()
-
+    
     const navigate = useNavigate()
     //Import Context
     const { 
@@ -27,7 +27,6 @@ const Explore = () => {
         NFTdescription, setNFTdescription,
         NFTimage, setNFTimage
     } = useContext(AppContext)
-
 
     //On Page Load
     useEffect(()=>{
@@ -85,7 +84,6 @@ const Explore = () => {
                     displaySearchNFTResults(res.data)
                 )
             })
-        //REACT_APP_NFTPORT
     },[searchNFT])
 
     function handleSearchSubmit(e){

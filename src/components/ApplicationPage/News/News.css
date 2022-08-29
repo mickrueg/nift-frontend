@@ -3,6 +3,13 @@
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    transition: 2s ease;
+    opacity: 1;
+}
+
+.News-page.hidden{
+    opacity: 0;
+    transition: 2s ease;
 }
 
 .News-container{

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../../../App';
 import './InfoModal.css';
 
@@ -10,7 +10,9 @@ const InfoModal = ({type}) => {
         NFTname, setNFTname,
         NFTdescription, setNFTdescription,
         NFTimage, setNFTimage,
-        savedPage, setSavedPage} = useContext(AppContext)
+        NFTid, setNFTid,
+        savedPage, setSavedPage,
+        setSavedNFTsUpdated} = useContext(AppContext)
 
     //Functions
     const addNFTToSaved = (user, name, image, description) =>{
@@ -23,8 +25,13 @@ const InfoModal = ({type}) => {
           .then()
           .catch(console.error)
     }
+    
 
-    // const removeNFTfromSaved = (user,name,)
+    const removeNFTfromSaved = (removeThisNFTId) => {
+        axios.delete(`https://nift-backend-two.herokuapp.com/nft/${removeThisNFTId}`)
+            .then()
+            .catch(console.error)
+    }
 
     let addOrRemove;
     if(type==='add'){
@@ -42,9 +49,12 @@ const InfoModal = ({type}) => {
     } else if(type==='remove'){
         addOrRemove = (<div className='Info-add' 
         onClick={()=>{
-            // addNFTToSaved(localStorage.getItem('username'), NFTname, NFTimage, NFTdescription)
+            removeNFTfromSaved(NFTid);
             setSavedPage('Saved-page')
             setInfoModal('Info-modal-page hidden')
+            setTimeout(() => {
+                setSavedNFTsUpdated(prev => prev + 1)
+            }, 100);
         }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="remove-saved-x" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>

@@ -3,7 +3,6 @@
 A web application that allows users to learn about NFTs, read related news articles, and explore the actual NFT marketplace. Users can save articles and NFTs to their account for future reference.
 
 ## Installation
-#
 The live web application can be accessed at [NiFT Web Application](https://nift-app.netlify.app/). Other links:
 
 > Github
@@ -15,7 +14,6 @@ The live web application can be accessed at [NiFT Web Application](https://nift-
 > - [Back End](https://nift-backend-two.herokuapp.com/)
 
 ## Front End Technologies
-#
 ### Code Base
 NiFT was built with React JS and CSS. 
 ### Animations
@@ -32,7 +30,6 @@ The app uses a variety of important CSS animations to create an interactive and 
     - When a user deletes a record, UseEffect is triggered to rerender the Saved Folder
 
 ## Back End Technologies
-#
 ### Password Encryption
 
 Bcrypt is used to hash the users' passwords at initial account creation and check their passwords at login.
@@ -45,17 +42,14 @@ Bcrypt is used to hash the users' passwords at initial account creation and chec
     - If a token fails and an error is printed, then the password does not match the original
 
 ## Original Wireframe
-#
 ![Original NiFT Wireframe](src/assets/NFTProjectWireframes.png)
 
 ## User Stories
-#
 - As a young professional, I want to educate myself on NFTs to prepare for the future.
 - As an artist, I want to learn how NFTs can help my business.
 - As a curious person, I want to explore the NFT marketplace.
 
 ## Approach Taken (Steps Followed)
-#
 
 1. Build wireframe on Canva (Intro page, login, learn page, explore page, navbar, news page, saved page)
 2. Design backend models (user, articles, NFTs) and code back end with MongoDB/Express/Node
@@ -65,9 +59,8 @@ Bcrypt is used to hash the users' passwords at initial account creation and chec
 6. Deploy frontend to Netlify
 
 ## New Technologies and Challenges
-#
 
-I had a great time building this project and testing out new technologies! Some of the big "new" items to me, include:
+I had a great time building this project and testing out new technologies! Some of the big "new" items I tackled on this project include:
 - Creating a user login and using password hashing
 - Using localstorage to identiy logged in user
 - Using keyframes to create an infinite loop animation

@@ -54,7 +54,6 @@ const News = () => {
         setLoadingLatest(true)
         axios.get('https://hn.algolia.com/api/v1/search_by_date?query=non-fungible+token')
             .then(res=>{
-                console.log(res.data)
                 setLoadingLatest(false)
                 setLatestArticles(
                     displayArticles(res.data)

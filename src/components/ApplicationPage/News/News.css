@@ -13,7 +13,9 @@
 }
 
 .News-container{
-    margin: 80px 20px;
+    margin: 65px auto 100px;
+    padding: 0 20px;
+    max-width: 800px;
     text-align: center;
 }
 

@@ -1,7 +1,8 @@
 .Info-modal-page{
     position: fixed;
     top: 0;
-    left: 10%;
+    /* left: 10%; */
+    right: 0%;
     opacity: 1;
     z-index: 0;
     height: 100%;
@@ -9,14 +10,14 @@
     color: #000560;
     background-color: white;
     overflow-y: scroll;
-    transition: left 500ms ease;
+    transition: right 500ms;
     box-shadow: 0 0 10px 0 grey;
 }
 
 .Info-modal-page.hidden{
     box-shadow: none;
-    left: 100%;
-    transition: left 500ms ease;
+    right: -90vw;
+    transition: right 500ms ;
 }
 
 .Info-modal-container{
@@ -87,4 +88,15 @@
     align-content: center;
     justify-content: center;
     margin-left: -1px;
+}
+
+@media screen and (min-width: 500px){
+    .Info-modal-page{
+        width: 450px;
+    }
+
+    .Info-modal-page.hidden{
+        right: -450px;
+    }
+
 }

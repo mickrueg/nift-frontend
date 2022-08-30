@@ -44,6 +44,7 @@ const Navbar = () => {
                     setNavNews('navbar-item not-selected')
                     setNavExplore('navbar-item not-selected')
                     setNavSaved('navbar-item not-selected')
+                    setInfoModal('Info-modal-page hidden')
                 }}
                 >{lightbulbIcon}Learn</li> 
                <li className={navNews}
@@ -53,6 +54,7 @@ const Navbar = () => {
                     setNavNews('navbar-item')
                     setNavExplore('navbar-item not-selected')
                     setNavSaved('navbar-item not-selected')
+                    setInfoModal('Info-modal-page hidden')
                 }}
                 >{newsIcon}News</li> 
                <li className={navExplore}
@@ -73,7 +75,7 @@ const Navbar = () => {
                     setNavNews('navbar-item not-selected')
                     setNavExplore('navbar-item not-selected')
                     setNavSaved('navbar-item')
-
+                    setInfoModal('Info-modal-page hidden')
                 }}
                >{folderIcon}My Folders</li> 
             </ul>

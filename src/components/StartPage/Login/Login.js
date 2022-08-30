@@ -120,7 +120,7 @@ const Login = () => {
           <label htmlFor='createPassword'>
             PASSWORD
           </label><br></br>
-          <input type='password' id='createPassword' name='createPassword'
+          <input type='password' id='password' name='password'
           ></input><br></br>
           <br></br>
           <label htmlFor='confirmPassword'>
